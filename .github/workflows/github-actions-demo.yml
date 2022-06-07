@@ -21,6 +21,7 @@ jobs:
           path: dist
       - run: git config --global user.email "divyanshu.dhiman@grazitti.com"
       - run: git config --global user.name "divyanshu.dhiman"
-      - run: git add -f .\dist\
+      - run: ls -l
+      - run: git add -f dist
       - run: git commit -m "changes adding dist"
       - run: git push
