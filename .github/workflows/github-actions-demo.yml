@@ -23,5 +23,5 @@ jobs:
       - run: git config --global user.name "divyanshu.dhiman"
       - run: ls -l
       - run: git add -f dist
-      - run: git commit -m "changes adding dist"
+      - run: git commit -m "${{ github.job }}"
       - run: git push
