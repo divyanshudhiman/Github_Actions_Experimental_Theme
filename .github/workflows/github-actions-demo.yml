@@ -19,12 +19,7 @@ jobs:
         with:
           name: Github_Actions_Experimental_Theme
           path: dist
-      - uses: borales/actions-yarn@v2.3.0
-        with:
-          cmd: shopify
-      - uses: actions/checkout@v1
-      - name: Shopify
-        uses: pgrimaud/action-shopify@master
+      - uses: pgrimaud/action-shopify@master
         env:
           SHOPIFY_PASSWORD: ${{ secrets.SHOPIFY_PASSWORD }}
           SHOPIFY_STORE_URL: ${{ secrets.SHOPIFY_STORE_URL }}
