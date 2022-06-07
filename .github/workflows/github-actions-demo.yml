@@ -22,3 +22,11 @@ jobs:
       - uses: borales/actions-yarn@v2.3.0
         with:
           cmd: shopify
+      - uses: actions/checkout@v1
+      - name: Shopify
+        uses: pgrimaud/action-shopify@master
+        env:
+          SHOPIFY_PASSWORD: ${{ secrets.SHOPIFY_PASSWORD }}
+          SHOPIFY_STORE_URL: ${{ secrets.SHOPIFY_STORE_URL }}
+          SHOPIFY_THEME_ID: ${{ secrets.SHOPIFY_THEME_ID }}
+          THEME_PATH: ${{ secrets.THEME_PATH }}
