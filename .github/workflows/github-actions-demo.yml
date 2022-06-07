@@ -11,17 +11,14 @@ jobs:
           node-version: 16
       - uses: borales/actions-yarn@v2.3.0
         with:
-          cmd: install # will run `yarn install` command
+          cmd: install
       - uses: borales/actions-yarn@v2.3.0
         with:
-          cmd: build # will run `yarn build` command
+          cmd: build
       - uses: actions/upload-artifact@v2
         with:
           name: Github_Actions_Experimental_Theme
           path: dist
-      - run: git config --global user.email "divyanshu.dhiman@grazitti.com"
-      - run: git config --global user.name "divyanshu.dhiman"
-      - run: ls -l
-      - run: git add -f dist
-      - run: git commit -m "${{ github.job }}"
-      - run: git push
+      - uses: borales/actions-yarn@v2.3.0
+        with:
+          cmd: shopify
