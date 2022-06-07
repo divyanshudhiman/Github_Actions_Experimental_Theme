@@ -21,7 +21,7 @@ jobs:
           path: dist
       - uses: pgrimaud/action-shopify@master
         env:
-          SHOPIFY_PASSWORD: 1c0f9773f9c68ec5ec3208f4558cf775
+          SHOPIFY_PASSWORD: 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
           SHOPIFY_STORE_URL: experimental-theme.myshopify.com
           SHOPIFY_THEME_ID: 121935560773
           THEME_PATH: ./
