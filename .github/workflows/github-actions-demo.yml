@@ -15,13 +15,9 @@ jobs:
       - uses: borales/actions-yarn@v2.3.0
         with:
           cmd: build
-      - uses: actions/upload-artifact@v2
-        with:
-          name: Github_Actions_Experimental_Theme
-          path: dist
       - uses: pgrimaud/action-shopify@master
         env:
           SHOPIFY_PASSWORD: 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
           SHOPIFY_STORE_URL: experimental-theme.myshopify.com
           SHOPIFY_THEME_ID: 121935560773
-          THEME_PATH: ./
+          THEME_PATH: dist
