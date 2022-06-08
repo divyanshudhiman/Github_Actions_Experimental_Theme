@@ -25,6 +25,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: distribution_folder 
+      - run: ls -l
       - uses: discolabs/deploy-shopify-theme-action@v1
         with:
           store: experimental-theme.myshopify.com
