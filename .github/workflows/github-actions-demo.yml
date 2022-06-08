@@ -21,10 +21,12 @@ jobs:
     runs-on: ubuntu-latest
     needs: build_and_install
     steps:
+      - run: mkdir dist
       - name: Download the dist folder
         uses: actions/download-artifact@v3
         with:
           name: distribution_folder 
+          path: ~/dist
       - run: ls -l
       - uses: discolabs/deploy-shopify-theme-action@v1
         with:
