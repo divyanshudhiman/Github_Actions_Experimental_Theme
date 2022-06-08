@@ -16,10 +16,12 @@ jobs:
         with:
           cmd: build
     if: success()
-      - uses: discolabs/deploy-shopify-theme-action@v1
-        with:
-          store: experimental-theme.myshopify.com
-          password: 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
-          theme_id: 121935560773
-          path: dist
-          additional_args: ''
+      name: deploying code in shopify
+      steps:
+        - uses: discolabs/deploy-shopify-theme-action@v1
+          with:
+            store: experimental-theme.myshopify.com
+            password: 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
+            theme_id: 121935560773
+            path: dist
+            additional_args: ''
