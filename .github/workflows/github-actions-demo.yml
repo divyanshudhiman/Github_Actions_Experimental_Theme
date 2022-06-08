@@ -15,7 +15,7 @@ jobs:
       - uses: borales/actions-yarn@v2.3.0
         with:
           cmd: build
-  build:
+  build2:
     name: Test2
     runs-on: ubuntu-latest
     steps:
