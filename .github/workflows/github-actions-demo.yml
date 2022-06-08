@@ -15,10 +15,7 @@ jobs:
       - uses: borales/actions-yarn@v2.3.0
         with:
           cmd: build
-  build2:
-    name: Test2
-    runs-on: ubuntu-latest
-    steps:
+      if: success()
       - uses: discolabs/deploy-shopify-theme-action@v1
         with:
           store: experimental-theme.myshopify.com
