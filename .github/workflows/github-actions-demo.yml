@@ -1,29 +1,20 @@
-name: Deply to Staging
+name: Deploy to Staging
 on: [push]
 jobs:
   Install:
     name: Install Dependencies
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      - uses: borales/actions-yarn@v2.3.0
-        with:
-          cmd: install
-  Build:
-    name: Build Dist
-    runs-on: ubuntu-latest
-    needs: Install
-    steps:
-      - uses: borales/actions-yarn@v2.3.0
-        with:
-          cmd: build
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 14
+    - run: yarn install
+    - run: yarn build
   Deploy:
     name: Deploy to Staging
     runs-on: ubuntu-latest
-    needs: Build
+    needs: Install
     steps:
       - uses: discolabs/deploy-shopify-theme-action@v1
         with:
