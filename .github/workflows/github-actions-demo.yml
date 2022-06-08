@@ -32,5 +32,5 @@ jobs:
         with:
           store: experimental-theme.myshopify.com
           password: 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
-          theme_id: 121935560773
+          theme_id: 121954795589
           path: dist
