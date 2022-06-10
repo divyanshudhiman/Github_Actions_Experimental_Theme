@@ -31,7 +31,7 @@ jobs:
         with:
           theme_root: 'dist'
           token: ${{ github.token }}
-  # Run Google Lighthouse Audit on the dist folder, a report will generate on the PR action notes
+  # Run Google Lighthouse Audit on the dist folder, a report will generate on the PR action notes -
   lighthouse-audit:
     name: Lighthouse
     runs-on: ubuntu-latest
