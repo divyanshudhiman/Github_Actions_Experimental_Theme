@@ -36,7 +36,7 @@ jobs:
           path: dist
       - name: Display structure of downloaded files
         run: ls -R
-        working-directory: /
+        working-directory: dist
       - uses: actions/checkout@v2
       - name: Theme Check
         uses: shopify/theme-check-action@v1
