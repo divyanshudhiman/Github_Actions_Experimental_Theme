@@ -37,6 +37,3 @@ jobs:
         working-directory: dist
       - name: Theme Check
         uses: shopify/theme-check-action@v1
-        with:
-          path: dist
-          token: ${{ github.token }}
