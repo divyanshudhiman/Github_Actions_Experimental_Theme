@@ -29,6 +29,7 @@ jobs:
       - name: Theme Check
         uses: shopify/theme-check-action@v1
         with:
-          theme_root: '.' # optional, could be './dist'
-          token: ${{ github.token }}
-          base: main
+          theme_root: './dist/distribution_folder'
+      - name: Display structure of downloaded files
+        run: ls -R
+        working-directory: '.'
