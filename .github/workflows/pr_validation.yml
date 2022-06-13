@@ -35,10 +35,13 @@ jobs:
     needs: build_and_install
     steps:
       - uses: actions/checkout@v2
+      - name: Display structure of downloaded files
+        run: ls -R
+        working-directory: '.'
       - name: Lighthouse
         uses: shopify/lighthouse-ci-action@1.0
         with:
-          theme_root: dist
+          theme_root: './dist/distribution_folder'
           store: experimental-theme.myshopify.com
           access_token: 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
           product_handle: ${{ secrets.SHOP_PRODUCT_HANDLE }}
