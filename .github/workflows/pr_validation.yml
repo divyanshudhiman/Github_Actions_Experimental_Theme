@@ -40,7 +40,7 @@ jobs:
       - name: Theme Check
         uses: shopify/theme-check-action@v1
         with:
-          theme_root: dist
+          theme_root: "dist"
           token: ${{ github.token }}
   # Run Google Lighthouse Audit on the dist folder, a report will generate on the PR action notes -
   lighthouse-audit:
