@@ -1,13 +1,5 @@
 name: Validate Pull Requests
-
-on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
-  pull_request:
-    branches: ['staging']
-    types: ['opened', 'edited', 'reopened', 'synchronize']
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
+on: [push]
 jobs:
   build_and_install:
     runs-on: ubuntu-latest
@@ -39,4 +31,4 @@ jobs:
       - name: Theme Check
         uses: shopify/theme-check-action@v1
         with:
-          theme_root : './distribution_folder'
+          theme_root : 'distribution_folder'
