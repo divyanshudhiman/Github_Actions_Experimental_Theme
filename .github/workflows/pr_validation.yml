@@ -35,6 +35,9 @@ jobs:
     needs: build_and_install
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/download-artifact@v3
+        with:
+          path: dist
       - name: Display structure of downloaded files
         run: ls -R
         working-directory: '.'
