@@ -15,7 +15,6 @@ jobs:
         with:
           name: distribution_folder
           path: dist
-
   deploy_to_staging_theme:
     runs-on: ubuntu-latest
     needs: build_and_install
@@ -30,6 +29,20 @@ jobs:
         uses: shopify/theme-check-action@v1
         with:
           theme_root: './dist/distribution_folder'
-      - name: Display structure of downloaded files
-        run: ls -R
-        working-directory: '.'
+  lighthouse-audit:
+    name: Lighthouse
+    runs-on: ubuntu-latest
+    needs: install-and-build
+    steps:
+      - uses: actions/checkout@v2
+      - name: Lighthouse
+        uses: shopify/lighthouse-ci-action@1.0
+        with:
+          theme_root: dist
+          store: experimental-theme.myshopify.com
+          access_token: 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
+          product_handle: ${{ secrets.SHOP_PRODUCT_HANDLE }}
+          collection_handle: ${{ secrets.SHOP_COLLECTION_HANDLE }}
+          lhci_github_app_token: w78tPwmNVlSpu8:26418218:hsDCwc7wvT
+          lhci_min_score_performance: 0.9
+          lhci_min_score_accessibility: 0.9
