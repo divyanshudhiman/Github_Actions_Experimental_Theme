@@ -9,8 +9,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  # Install Dependencies and Run Build Command
-  install-and-build:
+  build_and_install:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -24,11 +23,10 @@ jobs:
         with:
           name: distribution_folder
           path: dist
-  # Run Shopify theme check on the dist folder, findings will annotate in the PR Files
-  theme-check:
-    name: Theme Check
+
+  deploy_to_staging_theme:
     runs-on: ubuntu-latest
-    needs: install-and-build
+    needs: build_and_install
     steps:
       - uses: actions/checkout@v2
       - uses: actions/download-artifact@v3
@@ -40,5 +38,5 @@ jobs:
       - name: Theme Check
         uses: shopify/theme-check-action@v1
         with:
-          theme_root: './dist/distribution_folder'
+          path: dist
           token: ${{ github.token }}
