@@ -30,9 +30,9 @@ jobs:
 
       - uses: discolabs/deploy-shopify-theme-action@v1
         with:
-          store: ${{ secrets.SHOP_STORE }}
-          password: ${{ secrets.SHOP_ACCESS_TOKEN }}
-          theme_id: ${{ secrets.PUBLISHED_SHOP_THEME_ID }}
+          store: experimental-theme.myshopify.com
+          password: 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
+          theme_id: 121954795589
           path: './dist'
           additional_args: '--allow-live'
 #           additional_args: '--ignored-file=config/settings_data.json'
